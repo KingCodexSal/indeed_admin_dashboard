@@ -5,7 +5,17 @@ import {
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 
-const Pagination = ({ currentPage, totalPages, onPageChange }) => {
+interface PaginationProps {
+  currentPage: number;
+  totalPages: number;
+  onPageChange: (page: number) => void;
+}
+
+const Pagination: React.FC<PaginationProps> = ({
+  currentPage,
+  totalPages,
+  onPageChange,
+}) => {
   const handlePrevious = () => {
     if (currentPage > 1) {
       onPageChange(currentPage - 1);
@@ -19,21 +29,21 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
   };
 
   return (
-    <div className="flex justify-center mt-6 space-x-2">
+    <div className="flex justify-center mt-4">
       <button
         onClick={handlePrevious}
+        className="p-2 focus:outline-none"
         disabled={currentPage === 1}
-        className="px-3 py-2 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded disabled:opacity-50"
       >
         <FontAwesomeIcon icon={faChevronLeft} />
       </button>
-      <span className="px-3 py-2 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded">
-        {currentPage}
+      <span className="mx-2">
+        {currentPage} / {totalPages}
       </span>
       <button
         onClick={handleNext}
+        className="p-2 focus:outline-none"
         disabled={currentPage === totalPages}
-        className="px-3 py-2 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded disabled:opacity-50"
       >
         <FontAwesomeIcon icon={faChevronRight} />
       </button>
