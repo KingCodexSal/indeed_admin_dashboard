@@ -17,7 +17,7 @@ const Sidebar: React.FC<SidebarProps> = ({
     <div
       className={`fixed inset-y-0 left-0 transform ${
         isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-      } transition-transform duration-300 ease-in-out bg-gray-800 text-white w-64`}
+      } md:translate-x-0 transition-transform duration-300 ease-in-out bg-gray-800 text-white w-64`}
     >
       <div className="flex items-center justify-center h-16 shadow-md">
         <h1 className="text-2xl font-semibold">Dashboard</h1>
