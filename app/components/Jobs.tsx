@@ -7,7 +7,11 @@ const jobs = [
   // Add more jobs as needed
 ];
 
-const Jobs = ({ searchQuery }) => {
+interface JobsProps {
+  searchQuery: string;
+}
+
+const Jobs: React.FC<JobsProps> = ({ searchQuery }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const jobsPerPage = 5;
 
@@ -29,7 +33,7 @@ const Jobs = ({ searchQuery }) => {
       <h2 className="text-2xl font-semibold mb-4">Jobs</h2>
       {filteredJobs.length === 0 ? (
         <p className="text-center text-gray-600 dark:text-gray-200">
-          Nothing to see here
+          This item cannot be found
         </p>
       ) : (
         <>

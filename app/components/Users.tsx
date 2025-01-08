@@ -9,7 +9,11 @@ const users = [
   // Add more users as needed
 ];
 
-const Users = ({ searchQuery }) => {
+interface UsersProps {
+  searchQuery: string;
+}
+
+const Users: React.FC<UsersProps> = ({ searchQuery }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const usersPerPage = 5;
 
@@ -31,7 +35,7 @@ const Users = ({ searchQuery }) => {
       <h2 className="text-2xl font-semibold mb-4">Users</h2>
       {filteredUsers.length === 0 ? (
         <p className="text-center text-gray-600 dark:text-gray-200">
-          Nothing to see here
+          This item cannot be found
         </p>
       ) : (
         <>
