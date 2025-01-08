@@ -1,13 +1,25 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, ChangeEvent } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBell, faSearch, faBars } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 
-const NavBar = ({ toggleSidebar, activeTab, setActiveTab, setSearchQuery }) => {
+interface NavBarProps {
+  toggleSidebar: () => void;
+  activeTab: string;
+  setActiveTab: (tab: string) => void;
+  setSearchQuery: (query: string) => void;
+}
+
+const NavBar: React.FC<NavBarProps> = ({
+  toggleSidebar,
+  activeTab,
+  setActiveTab,
+  setSearchQuery,
+}) => {
   const [search, setSearch] = useState("");
 
-  const handleSearchChange = (e) => {
+  const handleSearchChange = (e: ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
     setSearchQuery(e.target.value);
   };
