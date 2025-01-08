@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBell, faSearch, faBars } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
+import ThemeToggle from "./ThemeToggle";
 
 const NavBar = ({ toggleSidebar, activeTab, setActiveTab, setSearchQuery }) => {
   const [search, setSearch] = useState("");
@@ -11,10 +12,6 @@ const NavBar = ({ toggleSidebar, activeTab, setActiveTab, setSearchQuery }) => {
   const handleSearchChange = (e) => {
     setSearch(e.target.value);
     setSearchQuery(e.target.value);
-  };
-
-  const toggleProfileMenu = () => {
-    setIsProfileOpen(!isProfileOpen);
   };
 
   return (
@@ -47,6 +44,7 @@ const NavBar = ({ toggleSidebar, activeTab, setActiveTab, setSearchQuery }) => {
         ) : null}
       </div>
       <div className="flex items-center space-x-4">
+        <ThemeToggle />
         <button className="p-2 focus:outline-none">
           <FontAwesomeIcon icon={faBell} className="text-white" />
         </button>
