@@ -6,7 +6,6 @@ import Image from "next/image";
 
 const NavBar = ({ toggleSidebar, activeTab, setActiveTab, setSearchQuery }) => {
   const [search, setSearch] = useState("");
-  const [isProfileOpen, setIsProfileOpen] = useState(false);
 
   const handleSearchChange = (e) => {
     setSearch(e.target.value);
