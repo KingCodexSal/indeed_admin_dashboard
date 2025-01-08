@@ -4,6 +4,12 @@ import Pagination from "./Pagination";
 const jobs = [
   { id: 1, title: "Software Engineer", company: "Tech Corp" },
   { id: 2, title: "Product Manager", company: "Business Inc" },
+  { id: 3, title: "Software Engineer", company: "Tech Corp" },
+  { id: 4, title: "Product Manager", company: "Business Inc" },
+  { id: 5, title: "Software Engineer", company: "Tech Corp" },
+  { id: 6, title: "Product Manager", company: "Business Inc" },
+  { id: 7, title: "Software Engineer", company: "Tech Corp" },
+  { id: 8, title: "Product Manager", company: "Business Inc" },
   // Add more jobs as needed
 ];
 
